@@ -22,24 +22,24 @@ This pipeline processes confocal microscopy ND2 files through four steps:
 - MATLAB (R2022b or later)
 
 ### Group Resources (Pre-installed)
+All pipeline scripts and toolboxes are pre-installed in the group 
+shared space and ready to use.
+
 | Resource | Path |
 |---|---|
+| **Pipeline script** | `/home/groups/illorent/microglia_morphology/microglia_array.sh` |
 | MMQT toolbox | `/home/groups/illorent/mmqt-master` |
 | Bio-Formats toolbox | `/home/groups/illorent/bfmatlab` |
 | MMQT private fixes | `/home/groups/illorent/mmqt_private` |
 
-## Quick Start
+### Quick Start
+
+1. Transfer your ND2 files to Sherlock: *Read globus_transfer.md for more information.*
+
+2. Since the script is pre-installed in the group space, you can 
+submit it directly without cloning the repository:
 
 ```bash
-# 1. Clone the repository
-git clone https://github.com/llorente-lab/lab-pipelines-microglia-morphology.git
-cd lab-pipelines-microglia-morphology
+sbatch /home/groups/illorent/microglia_morphology/microglia_array.sh
 
-# 2. Follow the setup guide
-cat docs/sherlock_setup.md
 
-# 3. Transfer your ND2 files to Sherlock
-scp *.nd2 YOUR_SUNETID@login.sherlock.stanford.edu:/scratch/users/$USER/Microglia_morphology/RawData/
-
-# 4. Run the pipeline
-sbatch scripts/microglia_array.sh
