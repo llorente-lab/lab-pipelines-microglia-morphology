@@ -1,0 +1,30 @@
+cat > ~/lab-pipelines-microglia-morphology/.gitignore << 'EOF'
+# MATLAB
+*.asv
+*.m~
+*.mex*
+
+# Data files (never commit)
+*.nd2
+*.mat
+*.avi
+*.mp4
+*.tif
+*.tiff
+*.png
+*.pdf
+*.eps
+
+# Log files
+*.log
+*.out
+*.err
+slurm-*.out
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Scratch paths
+/scratch/
+EOF
